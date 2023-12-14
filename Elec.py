@@ -15,15 +15,11 @@ gray_image = cv2.cvtColor(combined_image, cv2.COLOR_BGR2GRAY)
 
 elec_range = cv2.inRange(combined_image, (50, 10, 170), (200, 230, 255))
 cv2.imshow('electronic_license_plate', elec_range)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+cv2.waitKey()
 
 commercial_range = cv2.inRange(combined_image, (20, 100, 100), (30, 255, 255))
 cv2.imshow('commercial_vehicle', commercial_range)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-
-cv2.waitKey(0)
+cv2.waitKey()
 
 height, width = elec_range.shape[:2]
 
@@ -57,4 +53,3 @@ if Commercial >= 1000:
     print("영업용 자동차입니다.")
 else:
     print("영업용 자동차가 아닙니다.")
-
